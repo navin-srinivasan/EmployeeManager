@@ -44,9 +44,7 @@ public class EmployeeManagerDAO {
         r.set("Employee_DESIGNATION", "Manager");
         r.set("Employee_DEPARTMENT", "Cliq");
         this.dataObject.addRow(r);
-        System.out.println("Before"+this.dataObject);
         this.persistence.add(this.dataObject);
-        System.out.println("After"+this.dataObject);
 
     }
 
