@@ -23,13 +23,6 @@ public class MyResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt()  {
-        try {
-            System.out.println("In resource");
-            this.service = new EmployeeManagerService();
-            this.service.populate();
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
         return "Got it!";
     }
 }

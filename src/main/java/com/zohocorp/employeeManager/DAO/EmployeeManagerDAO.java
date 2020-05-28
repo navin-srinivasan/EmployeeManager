@@ -17,7 +17,6 @@ public class EmployeeManagerDAO {
     Persistence persistence;
 
     public EmployeeManagerDAO() throws Exception {
-
         this.persistence = (Persistence) BeanUtil.lookup("Persistence");
 
     }

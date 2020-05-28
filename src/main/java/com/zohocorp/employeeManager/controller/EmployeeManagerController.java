@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.zohocorp.employeeManager.DAO.Schedule;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -57,6 +58,35 @@ public class EmployeeManagerController {
         } catch (Exception exception) {
             System.out.println(exception);
             return Response.status(Status.BAD_REQUEST).build();
+        }
+    }
+
+    @GET
+    @Path("/schedule")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String schedule() {
+        System.out.println("In schedule Methode");
+        try {
+            Schedule schedule = new Schedule();
+            return "Schedule initiated";
+        }catch(Exception e){
+            System.out.println(e);
+            return "Schedule failed";
+        }
+    }
+
+    @GET
+    @Path("/poplate")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String populate() {
+        try {
+            System.out.println("In resource");
+            this.service = new EmployeeManagerService();
+            this.service.populate();
+            return "Success";
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return "Fail";
         }
     }
 

@@ -35,6 +35,8 @@ public class EmployeeManagerService {
                 this.userBean.setUsername((String) row.get("Login_USERNAME"));
                 this.userBean.setLoginCode((String) row.get("Login_Code"));
                 this.employeeManagerDAO.addActiveUser(username);
+            }else{
+                throw new Exception("Invalid password");
             }
         }
         return this.userBean;
